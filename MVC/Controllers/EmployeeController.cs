@@ -66,31 +66,12 @@ namespace MVC.Controllers
 
                 return View(mVCEmployeeModel);
         }
-
-
-        //[HttpGet]
-        //public ActionResult Delete()
-        //{
-        //    return View();
-        //}
-
-
-      
-       
+               
         public ActionResult Delete(int id)
         {
             HttpResponseMessage httpResponseMessage = GlobalVariables.httpClient.DeleteAsync("Employees/" + id.ToString()).Result;
             TempData["SuccessMessage"] = "Deleted Successfully";
             return RedirectToAction("Index");
         }
-
-
-
-
-
-
-
-
-
     }
 }
